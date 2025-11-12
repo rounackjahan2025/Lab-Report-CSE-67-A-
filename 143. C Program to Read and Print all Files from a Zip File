@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    system("unzip -l example.zip");
+    return 0;
+}
