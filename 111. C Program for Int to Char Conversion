@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer (ASCII code): ");
+    scanf("%d", &num);
+    printf("Character: %c\n", (char)num);
+    return 0;
+}
