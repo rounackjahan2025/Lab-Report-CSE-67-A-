@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    FILE *f1, *f2;
+    char source[50], target[50], ch;
+
+    printf("Enter source file name: ");
+    scanf("%s", source);
+    printf("Enter target file name: ");
+    scanf("%s", target);
+
+    f1 = fopen(source, "r");
+    f2 = fopen(target, "a");
+
+    if(!f1 || !f2) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    while((ch = fgetc(f1)) != EOF)
+        fputc(ch, f2);
+
+    printf("File appended successfully.\n");
+    fclose(f1);
+    fclose(f2);
+    return 0;
+}
