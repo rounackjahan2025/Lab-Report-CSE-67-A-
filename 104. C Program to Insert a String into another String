@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[200], str2[100];
+    int pos;
+    printf("Enter main string: ");
+    scanf(" %[^\n]s", str1);
+    printf("Enter string to insert: ");
+    scanf(" %[^\n]s", str2);
+    printf("Enter position: ");
+    scanf("%d", &pos);
+
+    char result[300];
+    strncpy(result, str1, pos);
+    result[pos] = '\0';
+    strcat(result, str2);
+    strcat(result, str1 + pos);
+
+    printf("Final string: %s\n", result);
+    return 0;
+}
