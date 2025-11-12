@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    float num;
+    char str[50];
+    printf("Enter a float: ");
+    scanf("%f", &num);
+    sprintf(str, "%f", num);
+    printf("String: %s\n", str);
+    return 0;
+}
