@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char filename[50];
+    printf("Enter filename: ");
+    scanf("%s", filename);
+
+    if (chmod(filename, 0444) == 0)
+        printf("File made read-only.\n");
+    else
+        perror("Error");
+    return 0;
+}
