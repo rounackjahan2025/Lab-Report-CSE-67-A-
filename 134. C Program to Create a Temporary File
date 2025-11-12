@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    FILE *temp = tmpfile();
+    fprintf(temp, "Temporary file created!\n");
+    printf("Temporary file created successfully.\n");
+    fclose(temp);
+    return 0;
+}
