@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, sum, temp, remainder, digits;
+
+    printf("Armstrong numbers between 1 to 1000:\n");
+    for(num = 1; num <= 1000; num++) {
+        sum = 0;
+        temp = num;
+        digits = 0;
+
+        int temp2 = temp;
+        while(temp2 != 0) {
+            digits++;
+            temp2 /= 10;
+        }
+
+        while(temp != 0) {
+            remainder = temp % 10;
+            sum += pow(remainder, digits);
+            temp /= 10;
+        }
+
+        if(sum == num)
+            printf("%d ", num);
+    }
+
+    return 0;
+}
