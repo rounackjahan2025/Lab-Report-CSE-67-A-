@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+#define MAX 100
+
+int stack[MAX], top = -1;
+
+void push(int x) {
+    stack[++top] = x;
+}
+
+int pop() {
+    return stack[top--];
+}
+
+void insertAtBottom(int x) {
+    if(top == -1) {
+        push(x);
+    } else {
+        int temp = pop();
+        insertAtBottom(x);
+        push(temp);
+    }
+}
+
+void reverseStack() {
+    if(top != -1) {
+        int temp = pop();
+        reverseStack();
+        insertAtBottom(temp);
+    }
+}
+
+int main() {
+    int n, x;
+    printf("Enter number of elements in stack: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &x);
+        push(x);
+    }
+
+    reverseStack();
+
+    printf("Reversed stack:\n");
+    while(top != -1) {
+        printf("%d ", pop());
+    }
+
+    return 0;
+}
