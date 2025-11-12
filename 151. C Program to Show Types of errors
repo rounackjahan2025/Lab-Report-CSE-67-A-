@@ -1,0 +1,11 @@
+/*
+Three types of errors in C:
+1. Syntax Error  -> Missing semicolon etc.
+2. Logical Error -> Wrong logic (e.g., wrong output)
+3. Runtime Error -> Division by zero, invalid pointer
+*/
+#include <stdio.h>
+int main() {
+    printf("Example of different types of errors.\n");
+    return 0;
+}
