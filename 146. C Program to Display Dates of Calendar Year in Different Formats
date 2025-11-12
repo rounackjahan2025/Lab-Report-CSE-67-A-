@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t t = time(NULL);
+    struct tm *tm = localtime(&t);
+
+    char format1[30], format2[30], format3[30];
+    strftime(format1, sizeof(format1), "%d-%m-%Y", tm);
+    strftime(format2, sizeof(format2), "%B %d, %Y", tm);
+    strftime(format3, sizeof(format3), "%A, %B %d, %Y", tm);
+
+    printf("Format 1: %s\n", format1);
+    printf("Format 2: %s\n", format2);
+    printf("Format 3: %s\n", format3);
+
+    return 0;
+}
