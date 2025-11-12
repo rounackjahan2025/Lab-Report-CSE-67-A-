@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+    printf("Before return\n");
+    return 0;
+    printf("This line is unreachable.\n");  // unreachable code
+    return 0;
+}
