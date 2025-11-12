@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    printf("Enter size of square matrix: ");
+    scanf("%d",&n);
+
+    int mat[n][n];
+    printf("Enter elements:\n");
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            scanf("%d",&mat[i][j]);
+
+    int trace=0;
+    double sumSquares=0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            sumSquares += mat[i][j]*mat[i][j];
+            if(i==j) trace+=mat[i][j];
+        }
+    }
+
+    double norm = sqrt(sumSquares);
+    printf("Trace = %d\n", trace);
+    printf("Normal = %.2lf\n", norm);
+    return 0;
+}
