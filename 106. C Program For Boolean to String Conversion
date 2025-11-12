@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+const char* boolToString(bool value) {
+    return value ? "true" : "false";
+}
+
+int main() {
+    bool a = 1, b = 0;
+    printf("%s\n", boolToString(a));
+    printf("%s\n", boolToString(b));
+    return 0;
+}
