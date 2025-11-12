@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int roll;
+    float marks;
+};
+
+int main() {
+    struct Student s = {"Riya", 1, 92.5}, r;
+    FILE *f = fopen("student.dat", "wb");
+    fwrite(&s, sizeof(s), 1, f);
+    fclose(f);
+
+    f = fopen("student.dat", "rb");
+    fread(&r, sizeof(r), 1, f);
+    fclose(f);
+
+    printf("Name: %s\nRoll: %d\nMarks: %.2f\n", r.name, r.roll, r.marks);
+    return 0;
+}
