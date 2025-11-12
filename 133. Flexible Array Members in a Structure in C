@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    int count;
+    int marks[];
+};
+
+int main() {
+    int n = 3;
+    struct Student *s = malloc(sizeof(struct Student) + n * sizeof(int));
+    s->count = n;
+
+    for(int i=0;i<n;i++)
+        s->marks[i] = i*10 + 50;
+
+    for(int i=0;i<n;i++)
+        printf("Mark %d: %d\n", i+1, s->marks[i]);
+
+    free(s);
+    return 0;
+}
