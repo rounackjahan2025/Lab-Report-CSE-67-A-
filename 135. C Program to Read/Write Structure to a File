@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct Student {
+    char name[30];
+    int roll;
+    float marks;
+};
+
+int main() {
+    struct Student s = {"Mim", 2, 88.4};
+    FILE *f = fopen("record.bin", "wb");
+    fwrite(&s, sizeof(s), 1, f);
+    fclose(f);
+    printf("Data written.\n");
+
+    f = fopen("record.bin", "rb");
+    fread(&s, sizeof(s), 1, f);
+    fclose(f);
+    printf("Name: %s\nRoll: %d\nMarks: %.2f\n", s.name, s.roll, s.marks);
+    return 0;
+}
