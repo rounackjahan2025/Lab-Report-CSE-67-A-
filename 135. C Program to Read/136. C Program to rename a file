@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    char oldname[50], newname[50];
+    printf("Enter old filename: ");
+    scanf("%s", oldname);
+    printf("Enter new filename: ");
+    scanf("%s", newname);
+
+    if(rename(oldname, newname) == 0)
+        printf("File renamed successfully.\n");
+    else
+        printf("Error renaming file.\n");
+    return 0;
+}
