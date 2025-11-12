@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char str[50];
+    printf("Enter a number string: ");
+    scanf("%s", str);
+    long val = atol(str);
+    printf("Converted long: %ld\n", val);
+    return 0;
+}
