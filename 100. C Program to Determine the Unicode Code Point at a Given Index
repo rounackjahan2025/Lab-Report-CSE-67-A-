@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[200];
+    int index;
+    printf("Enter string: ");
+    scanf(" %[^\n]s", str);
+    printf("Enter index: ");
+    scanf("%d",&index);
+
+    if(index<0 || index>=strlen(str)){
+        printf("Invalid index\n");
+    } else {
+        printf("Unicode code point at index %d = %d\n", index, (int)str[index]);
+    }
+    return 0;
+}
